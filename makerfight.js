@@ -46,6 +46,7 @@ http.createServer(function (req, res) {
 		id = parseInt(u["piston"]) - 1
 		if(u["state"] == "on")  	{activate(pistons[id]);}
 		else if(u["state"] == "imp")	{procedure(pistons[id]);}
+		else if(u["state"] == "query")  {res.end(pistons[id]["state"]};
 		else				{desactivate(pistons[id]);}
 		res.end("Ok");
 	} catch (error) {
